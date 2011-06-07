@@ -1,0 +1,13 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<div>
+    <div>
+        Number of open tickets: ${tickets.size}
+    </div>
+    <ul>
+    #{list tickets, as: 't'}
+        <li><a href="http://play.lighthouseapp.com/projects/57987/tickets/${t.number}" target="right">#${t.number}</a><br>${t.title} (version:${t.version})</li>
+    #{/list}
+    </ul>
+</div>
